@@ -7,9 +7,10 @@
   </b-container>
 </template>
 
-<script>
+<script lang="ts">
 import { mapMutations, mapState } from 'vuex'
-export default {
+import Vue from 'vue'
+export default Vue.extend({
   components: {
     Login: () => import('~/components/common/Auth/Login.vue'),
     Navbar: () => import('~/components/common/Layout/Navbar.vue'),
@@ -30,5 +31,5 @@ export default {
       SET_LANG: 'SET_LANG'
     })
   }
-}
+})
 </script>
