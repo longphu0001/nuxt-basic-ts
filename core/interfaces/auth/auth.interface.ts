@@ -1,5 +1,5 @@
 /* eslint-disable */
-interface Auth {
+export interface Auth {
   currentUser: {
     fullname: string
     email: string

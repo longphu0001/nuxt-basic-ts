@@ -12,6 +12,12 @@
     <p class="random-text-using-mixin">
       {{ $t('random-text-using-mixin') }}
     </p>
+    <b-button
+      variant="primary"
+      @click="$store.commit('example/INCREASE_COUNT')"
+    >
+      Vuex module example {{ $store.state.example.count }}
+    </b-button>
   </b-container>
 </template>
 <script lang="ts">
