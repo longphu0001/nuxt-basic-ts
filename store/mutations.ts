@@ -1,5 +1,5 @@
 import { MutationTree } from 'vuex'
-import { Auth } from '../core/interfaces/auth/auth.interface'
+import { Auth } from './types/interfaces/auth.interface'
 import { RootState } from './state'
 export default {
   SET_LANG(state: RootState, locale: string) {

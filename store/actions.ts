@@ -1,5 +1,5 @@
 import { ActionTree } from 'vuex'
-import { Auth } from '../core/interfaces/auth/auth.interface'
+import { Auth } from './types/interfaces/auth.interface'
 import { RootState } from './state'
 const cookieparser = process.server ? require('cookieparser') : undefined
 const Cookie = process.client ? require('js-cookie') : undefined
