@@ -26,7 +26,7 @@ import Mixins from '~/mixins/example'
 @Component({
   components: {
     ExampleComponent: () =>
-      import('~/components/specifics/Home/ExampleComponent.vue')
+      import('~/components/specifics/Home/ExampleComponent/template.vue')
   }
 })
 export default class PageIndex extends mixins(Mixins) {
