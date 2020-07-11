@@ -15,18 +15,19 @@
   </b-container>
 </template>
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component } from 'nuxt-property-decorator'
+import { mixins } from 'vue-class-component'
+import Mixins from '~/mixins/example'
 @Component({
   components: {
     ExampleComponent: () =>
       import('~/components/specifics/Home/ExampleComponent.vue')
   }
 })
-export default class PageIndex extends Vue {
+export default class PageIndex extends mixins(Mixins) {
   created() {
-    // Global function and variable from mixins
-    // this.sayHello("Rim")
-    // console.log(this.mixinMessage)
+    // Function and variable from mixins
+    this.sayHello('Rim')
   }
 
   head() {

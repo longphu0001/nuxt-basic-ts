@@ -46,8 +46,7 @@ export default {
     '~/plugins/i18n.js',
     // Utilities
     '~/utils/bus.js', // Event bus
-    '~/utils/filters.js', // Filters for custom text formating
-    '~/mixins' // Global helper functions, use this.function_name() in your component
+    '~/utils/filters.js' // Filters for custom text formating
   ],
   /*
    ** Nuxt.js dev-modules

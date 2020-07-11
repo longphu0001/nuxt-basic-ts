@@ -29,11 +29,6 @@ export const mutations: MutationTree<RootState> = {
 }
 
 export const actions: ActionTree<RootState, RootState> = {
-  // fetchThings({ commit }) {
-  //   const things = this.$axios.$get('/things')
-  //   console.log(things)
-  //   commit('CHANGE_NAME', 'New name')
-  // }
   // This will run first when nuxt app init
   async nuxtServerInit({ commit }, { req }) {
     let auth = null
