@@ -1,6 +1,6 @@
 <template>
   <b-container fluid>
-    <ExampleComponent />
+    <ExampleComponent @randomBus="catchFromBus" />
     <p class="random-class">
       {{ $t('random-text') | slugify }}
     </p>
@@ -15,8 +15,7 @@
   </b-container>
 </template>
 <script lang="ts">
-import { Component } from 'nuxt-property-decorator'
-import { mixins } from 'vue-class-component'
+import { Component, mixins } from 'nuxt-property-decorator'
 import Mixins from '~/mixins/example'
 @Component({
   components: {
@@ -25,6 +24,12 @@ import Mixins from '~/mixins/example'
   }
 })
 export default class PageIndex extends mixins(Mixins) {
+  // Event bus example
+  catchFromBus() {
+    // eslint-disable-next-line no-console
+    console.log('Bus caught!')
+  }
+
   created() {
     // Function and variable from mixins
     this.sayHello('Rim')

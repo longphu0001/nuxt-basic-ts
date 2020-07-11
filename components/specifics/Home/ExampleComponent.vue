@@ -6,5 +6,9 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 @Component({})
-export default class ExampleComponent extends Vue {}
+export default class ExampleComponent extends Vue {
+  mounted() {
+    this.$emit('randomBus')
+  }
+}
 </script>

@@ -48,9 +48,10 @@ export const actions: ActionTree<RootState, RootState> = {
       // We simulate the async request with timeout.
       // Replace the whole thing with a nice axios request to obtain the auth instance as usual
       // This use a constain as an example
-      const auth = {
+      const auth: Auth = {
         currentUser: {
-          name: 'Someone'
+          fullname: 'Someone',
+          email: 'Some email'
         },
         accessToken: 'yourAccessTokenFromBackend'
       }
