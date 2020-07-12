@@ -1,14 +1,15 @@
 import { MutationTree } from 'vuex'
 import { Auth } from './types/interfaces/auth.interface'
 import { RootState } from './state'
+import { MutationTypes } from './types/enum/mutations.enum'
 export default {
-  SET_LANG(state: RootState, locale: string) {
+  [MutationTypes.SET_LANG](state: RootState, locale: string) {
     if (state.locales.includes(locale)) {
       state.locale = locale
       localStorage.setItem('locale', locale)
     }
   },
-  SET_AUTH(state: RootState, auth: Auth) {
+  [MutationTypes.SET_AUTH](state: RootState, auth: Auth) {
     state.auth = auth
   }
 } as MutationTree<RootState>
