@@ -9,7 +9,7 @@ import { RootState } from '~/store/state'
     // other stuff
   }
 })
-export default class ExampleComponent extends Vue {
+export default class Example extends Vue {
   // Your can get the state by mapState, then declare type like this:
   example!: string
   // Or you can do this by hand:
