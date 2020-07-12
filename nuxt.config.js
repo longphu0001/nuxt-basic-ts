@@ -25,8 +25,8 @@ export default {
    ** Global CSS
    */
   css: [
-    '~/assets/scss/others/all.scss',
     '~/assets/scss/bootstrap-vue/all.scss',
+    '~/assets/scss/others/all.scss',
     '~/assets/scss/main.scss'
   ],
   /*

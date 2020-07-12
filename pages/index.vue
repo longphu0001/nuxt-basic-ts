@@ -25,6 +25,8 @@ import { Component, mixins } from 'nuxt-property-decorator'
 import Mixins from '~/mixins/example'
 @Component({
   components: {
+    // You must use .vue in import now since your component is seperated
+    // That makes the compiler doesn't automatically recognize the component as a module
     ExampleComponent: () =>
       import('~/components/specifics/Home/Example/component.vue')
   }
