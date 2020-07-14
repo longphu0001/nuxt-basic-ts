@@ -1,6 +1,7 @@
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Vue, Mutation } from 'nuxt-property-decorator'
 import { mapState } from 'vuex'
 import { RootState } from '~/store/state'
+import { Auth } from '~/store/types/interfaces/auth.interface'
 @Component({
   computed: {
     ...mapState({
@@ -11,19 +12,22 @@ import { RootState } from '~/store/state'
   }
 })
 export default class Example extends Vue {
+  randomNumber: number = 10
   // Your can get the state by mapState, then declare it and its type like this:
   example!: string
   // Map auth using mapState above, then declare it inside this class
   auth!: RootState['auth']
-  // Then
-  currentUser = this.auth.currentUser
-  // Or you can do this by hand:
-  // get currentUser() {
-  //   return (this.$store.state as RootState).auth.currentUser
-  // }
+  // Then, if you want to get into auth and get currentUser
+  get currentUser() {
+    return this.auth.currentUser
+  }
+
+  // Mutation mapping with type check for payload example:
+  @Mutation('SET_AUTH') SET_AUTH!: Auth
 
   mounted() {
+    // this.randomNumber = this.currentUser // Type error
+    // this.SET_AUTH(this.randomNumber) // Type error
     this.$emit('randomBus')
-    console.log(typeof this.example)
   }
 }

@@ -8,13 +8,15 @@
 </template>
 
 <script lang="ts">
-import { mapMutations, mapState } from 'vuex'
 import Vue from 'vue'
+import { mapMutations, mapState } from 'vuex'
+import { Login, Navbar, Footer } from '~/components/common'
 export default Vue.extend({
   components: {
-    Login: () => import('~/components/common/Auth/Login.vue'),
-    Navbar: () => import('~/components/common/Layout/Navbar.vue'),
-    Footer: () => import('~/components/common/Layout/Footer.vue')
+    // Login: () => import('~/components/common/Auth/Login.vue'),
+    Login,
+    Navbar,
+    Footer
   },
   computed: {
     ...mapState({
