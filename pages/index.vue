@@ -1,6 +1,6 @@
 <template>
   <b-container fluid>
-    <ExampleComponent @randomBus="catchFromBus" />
+    <Example @randomBus="catchFromBus" />
     <p class="random-class">
       {{ $t('random-text') | slugify }}
     </p>
@@ -22,13 +22,11 @@
 </template>
 <script lang="ts">
 import { Component, mixins } from 'nuxt-property-decorator'
+import { Example } from '~/components/specifics/Home'
 import Mixins from '~/mixins/example'
 @Component({
   components: {
-    // You must use .vue in import now since your component is seperated
-    // That makes the compiler doesn't automatically recognize the component as a module
-    ExampleComponent: () =>
-      import('~/components/specifics/Home/Example/component.vue')
+    Example
   }
 })
 export default class PageIndex extends mixins(Mixins) {
