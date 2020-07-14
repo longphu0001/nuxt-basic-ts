@@ -1,7 +1,7 @@
 import { ActionTree } from 'vuex'
 import { Auth } from './types/interfaces/auth.interface'
 import { RootState } from './state'
-import { ActionTypes } from './types/enum/actions.enum'
+import { RootActions } from './types/enum/actions.enum'
 const cookieparser = process.server ? require('cookieparser') : undefined
 const Cookie = process.client ? require('js-cookie') : undefined
 
@@ -19,7 +19,7 @@ export default {
     }
     commit('SET_AUTH', auth)
   },
-  async [ActionTypes.login]({ commit }) {
+  async [RootActions.login]({ commit }) {
     setTimeout(() => {
       // We simulate the async request with timeout.
       // Replace the whole thing with a nice axios request to obtain the auth instance as usual
@@ -35,7 +35,7 @@ export default {
       commit('SET_AUTH', auth) // Mutating to store for client rendering
     }, 1000)
   },
-  async [ActionTypes.logout]({ commit }) {
+  async [RootActions.logout]({ commit }) {
     await Cookie.remove('auth')
     commit('SET_AUTH', null)
   }
