@@ -1,1 +1,0 @@
-# Since creating a new VueX module is tidious, keep this directory for further copy and paste :D

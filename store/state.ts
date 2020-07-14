@@ -1,4 +1,4 @@
-import { Auth } from './types/interfaces/auth.interface'
+import { Auth } from '~/typings/store/root/interfaces/auth.interface'
 // VueX-Store state
 const state = () => ({
   locales: ['en', 'vi'] as string[],

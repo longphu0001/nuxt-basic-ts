@@ -80,7 +80,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Component, Mutation, State } from 'nuxt-property-decorator'
-import { RootMutations } from '../../../store/types/enum/mutations.enum'
+import { RootMutations } from '~/typings/store/root/enum/mutations.enum'
 @Component({})
 export default class Navbar extends Vue {
   @State('locale') locale!: string

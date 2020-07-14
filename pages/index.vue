@@ -12,24 +12,26 @@
     <p class="random-text-using-mixin">
       {{ $t('random-text-using-mixin') }}
     </p>
-    <b-button
-      variant="primary"
-      @click="$store.commit('example/INCREASE_COUNT')"
-    >
-      Vuex module example {{ $store.state.example.count }}
+    <b-button variant="primary" @click="inc">
+      Vuex module example {{ count }}
     </b-button>
   </b-container>
 </template>
 <script lang="ts">
 import { Component, mixins } from 'nuxt-property-decorator'
+import { namespace } from 'vuex-class'
+import { MutationsEnum } from '~/typings/store/example/enum/mutations.enum'
 import { Example } from '~/components/specifics/Home'
 import Mixins from '~/mixins/example'
+const ExampleModule = namespace('example')
 @Component({
   components: {
     Example
   }
 })
 export default class PageIndex extends mixins(Mixins) {
+  @ExampleModule.Mutation(MutationsEnum.INCREASE_COUNT) inc!: () => void
+  @ExampleModule.State('count') count!: number
   // Event bus example
   catchFromBus() {
     // eslint-disable-next-line no-console

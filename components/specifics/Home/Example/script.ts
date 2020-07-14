@@ -1,9 +1,9 @@
-import { Component, Vue, Mutation, State } from 'nuxt-property-decorator'
-import { Auth } from '~/store/types/interfaces/auth.interface'
+import { Component, Vue } from 'nuxt-property-decorator'
+import { State, Mutation } from 'vuex-class'
+import { Auth } from '~/typings/store/root/interfaces/auth.interface'
 @Component({})
 export default class Example extends Vue {
   randomNumber: number = 10
-  @State('example') example!: string
   @State('auth') auth!: Auth
   // Mutation mapping with type check for payload example:
   @Mutation('SET_AUTH') SET_AUTH!: (key: Auth) => void

@@ -1,7 +1,7 @@
 import { ActionTree } from 'vuex'
-import { Auth } from './types/interfaces/auth.interface'
 import { RootState } from './state'
-import { RootActions } from './types/enum/actions.enum'
+import { Auth } from '~/typings/store/root/interfaces/auth.interface'
+import { RootActions } from '~/typings/store/root/enum/actions.enum'
 const cookieparser = process.server ? require('cookieparser') : undefined
 const Cookie = process.client ? require('js-cookie') : undefined
 

@@ -9,8 +9,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { Component, Mutation, State } from 'nuxt-property-decorator'
-import { RootMutations } from '../store/types/enum/mutations.enum'
+import { Component } from 'nuxt-property-decorator'
+import { State, Mutation } from 'vuex-class'
+import { RootMutations } from '~/typings/store/root/enum/mutations.enum'
 import { Login, Navbar, Footer } from '~/components/common'
 @Component({
   components: {
