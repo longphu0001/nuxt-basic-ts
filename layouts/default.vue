@@ -9,29 +9,25 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mapMutations, mapState } from 'vuex'
+import { Component, Mutation, State } from 'nuxt-property-decorator'
+import { MutationTypes } from '../store/types/enum/mutations.enum'
 import { Login, Navbar, Footer } from '~/components/common'
-export default Vue.extend({
+@Component({
   components: {
     // Login: () => import('~/components/common/Auth/Login.vue'),
     Login,
     Navbar,
     Footer
-  },
-  computed: {
-    ...mapState({
-      locale: 'locale'
-    })
-  },
-  mounted() {
-    // We store this configuration in localStorage because it lasts forever
-    this.$i18n.locale = localStorage.getItem('locale') || this.locale
-    this.SET_LANG(localStorage.getItem('locale')) // store in state and localStorage
-  },
-  methods: {
-    ...mapMutations({
-      SET_LANG: 'SET_LANG'
-    })
   }
 })
+export default class DefaultLayout extends Vue {
+  @State('locale') locale!: string
+  @Mutation(MutationTypes.SET_LANG) SET_LANG!: (key: string) => void
+  mounted() {
+    const localLocale: string = localStorage.getItem('locale') + ''
+    // We store this configuration in localStorage because it lasts forever
+    this.$i18n.locale = localLocale || this.locale
+    this.SET_LANG(localLocale) // store in state and localStorage
+  }
+}
 </script>

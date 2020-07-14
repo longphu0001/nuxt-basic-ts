@@ -6,7 +6,7 @@ export default class Example extends Vue {
   @State('example') example!: string
   @State('auth') auth!: Auth
   // Mutation mapping with type check for payload example:
-  @Mutation('SET_AUTH') SET_AUTH!: Auth
+  @Mutation('SET_AUTH') SET_AUTH!: (key: Auth) => void
   // Then, if you want to get into auth and get currentUser
   get currentUser() {
     return this.auth.currentUser
