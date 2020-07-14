@@ -9,7 +9,11 @@ export default class Example extends Vue {
   @Mutation('SET_AUTH') SET_AUTH!: (key: Auth) => void
   // Then, if you want to get into auth and get currentUser
   get currentUser() {
-    return this.auth.currentUser
+    if (this.auth) {
+      return this.auth.currentUser
+    } else {
+      return null
+    }
   }
 
   mounted() {
