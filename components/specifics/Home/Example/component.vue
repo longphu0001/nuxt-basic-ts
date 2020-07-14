@@ -4,5 +4,11 @@
     {{ example }}
   </p>
 </template>
-<script lang="ts" src="./script.ts"></script>
-<style lang="scss" scoped src="./_style.scss"></style>
+<script lang="ts">
+// Use src="" causes "is not a module error"
+import component from './script'
+export default component
+</script>
+<style lang="scss" scoped>
+@import './style';
+</style>
