@@ -22,6 +22,7 @@ import { Login, Navbar, Footer } from '~/components/common'
 })
 export default class DefaultLayout extends Vue {
   @State('locale') locale!: string
+  // Mutation mapping with type check for payload:
   @Mutation(MutationTypes.SET_LANG) SET_LANG!: (key: string) => void
   mounted() {
     const localLocale: string = localStorage.getItem('locale') + ''

@@ -1,8 +1,5 @@
 <template>
-  <p class="my-1 example-component">
-    {{ $t('home.introduction') }}
-    {{ example }}
-  </p>
+  <p class="my-1 example-component">{{ $t('home.introduction') }}</p>
 </template>
 <script lang="ts">
 // Use src="" causes "is not a module error"

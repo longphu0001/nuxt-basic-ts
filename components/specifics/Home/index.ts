@@ -1,1 +1,1 @@
-export { default as Example } from './Example/script'
+export { default as Example } from './Example/component.vue'

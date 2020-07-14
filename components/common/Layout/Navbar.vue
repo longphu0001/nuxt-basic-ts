@@ -78,23 +78,17 @@
 </template>
 
 <script lang="ts">
-import { mapMutations, mapState } from 'vuex'
 import Vue from 'vue'
-export default Vue.extend({
-  name: 'Navbar',
-  computed: {
-    ...mapState({
-      locale: 'locale'
-    })
-  },
-  methods: {
-    ...mapMutations({
-      SET_LANG: 'SET_LANG'
-    }),
-    changeLanguage(locale: string) {
-      this.SET_LANG(locale) // store in state and localStorage
-      this.$i18n.locale = locale // live change on website
-    }
+import { Component, Mutation, State } from 'nuxt-property-decorator'
+import { MutationTypes } from '../../../store/types/enum/mutations.enum'
+@Component({})
+export default class Navbar extends Vue {
+  @State('locale') locale!: string
+  // Mutation mapping with type check for payload:
+  @Mutation(MutationTypes.SET_LANG) SET_LANG!: (key: string) => void
+  changeLanguage(locale: string) {
+    this.SET_LANG(locale) // store in state and localStorage
+    this.$i18n.locale = locale // live change on website
   }
-})
+}
 </script>
