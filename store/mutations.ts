@@ -1,6 +1,6 @@
 import { MutationTree } from 'vuex'
 import { RootState } from './state'
-import { Auth } from '~/typings/store/root/interfaces/auth.interface'
+import { Auth } from '~/typings/auth/interfaces/auth.interface'
 import { RootMutations } from '~/typings/store/root/enum/mutations.enum'
 export default {
   [RootMutations.SET_LANG](state: RootState, locale: string) {

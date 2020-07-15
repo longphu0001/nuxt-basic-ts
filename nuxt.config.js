@@ -44,6 +44,7 @@ export default {
   plugins: [
     // Plugins
     '~/plugins/i18n.js',
+    '~/plugins/vee-validate.js',
     // Utilities
     '~/utils/bus.js', // Event bus
     '~/utils/filters.js' // Filters for custom text formating
@@ -99,6 +100,9 @@ export default {
    ** Build configuration
    */
   build: {
+    transpile: [
+      'vee-validate'
+    ],
     /*
      ** You can extend webpack config here
      */

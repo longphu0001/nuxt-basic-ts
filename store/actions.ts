@@ -1,7 +1,8 @@
 import { ActionTree } from 'vuex'
 import { RootState } from './state'
-import { Auth } from '~/typings/store/root/interfaces/auth.interface'
+import { Auth } from '~/typings/auth/interfaces/auth.interface'
 import { RootActions } from '~/typings/store/root/enum/actions.enum'
+import { ILogin } from '~/typings/auth/interfaces/login.interface'
 const cookieparser = process.server ? require('cookieparser') : undefined
 const Cookie = process.client ? require('js-cookie') : undefined
 
@@ -19,8 +20,9 @@ export default {
     }
     commit('SET_AUTH', auth)
   },
-  async [RootActions.login]({ commit }) {
+  async [RootActions.login]({ commit }, form: ILogin) {
     setTimeout(() => {
+      console.log(form)
       // We simulate the async request with timeout.
       // Replace the whole thing with a nice axios request to obtain the auth instance as usual
       // This use a constain as an example

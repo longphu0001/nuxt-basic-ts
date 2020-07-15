@@ -1,6 +1,6 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 import { State, Mutation } from 'vuex-class'
-import { Auth } from '~/typings/store/root/interfaces/auth.interface'
+import { Auth } from '~/typings/auth/interfaces/auth.interface'
 @Component({})
 export default class Example extends Vue {
   randomNumber: number = 10

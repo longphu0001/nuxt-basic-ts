@@ -24,11 +24,13 @@ export default class DefaultLayout extends Vue {
   @State('locale') locale!: string
   // Mutation mapping with type check for payload:
   @Mutation(RootMutations.SET_LANG) SET_LANG!: (key: string) => void
-  mounted() {
-    const localLocale: string = localStorage.getItem('locale') + ''
-    // We store this configuration in localStorage because it lasts forever
-    this.$i18n.locale = localLocale || this.locale
-    this.SET_LANG(localLocale) // store in state and localStorage
+  created() {
+    if (process.client) {
+      const localLocale: string = localStorage.getItem('locale') + ''
+      // We store this configuration in localStorage because it lasts forever
+      this.$i18n.locale = localLocale || this.locale
+      this.SET_LANG(localLocale) // store in state and localStorage
+    }
   }
 }
 </script>
